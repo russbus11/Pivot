@@ -1,6 +1,8 @@
-package test calculator
+package calculator
 
-import "errors"
+import (
+	"errors"
+)
 
 func Add(a, b int) int {
 	return a + b
