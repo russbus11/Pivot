@@ -1,4 +1,4 @@
-module ServerProject
+module github.com/Pivot
 
 go 1.18
 
