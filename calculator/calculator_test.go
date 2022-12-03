@@ -1,7 +1,8 @@
-package testcalculator
+package calculator_test
 
 import (
 	"fmt"
+	"github.com/russbus11/Pivot/calculator"
 	"testing"
 )
 
@@ -12,11 +13,11 @@ func TestCalculator(t *testing.T) {
 		operator string
 		solution int
 	}{
-		{25, 25, "+", 100},
+		{25, 25, "+", 50},
 		{100, 200, "+", 300},
 		{10, 5, "+", 15},
 		{25, 10, "-", 15},
-		{750, 800, "-", -150},
+		{750, 800, "-", -50},
 		{35, 15, "-", 20},
 		{10, 10, "*", 100},
 		{300, 1, "*", 300},
@@ -24,9 +25,6 @@ func TestCalculator(t *testing.T) {
 		{45, 5, "/", 9},
 		{500, 100, "/", 5},
 		{12, 0, "/", 0},
-		{12, 12, "^", 144},
-		{0, 0, "^", 1},
-		{0, 0, "^", 1},
 	}
 
 	for _, cases := range testCases {
@@ -51,10 +49,6 @@ func TestCalculator(t *testing.T) {
 					}
 				} else if result != cases.solution {
 					t.Errorf("result: %d - solution: %d", result, cases.solution)
-				}
-			case "^":
-				if result := calculator.Pow(float64(cases.num1), float64(cases.num2)); result != float64(cases.solution) {
-					t.Errorf("result: %f - solution: %d", result, cases.solution)
 				}
 			default:
 				t.Errorf("invalid: %s", cases.operator)
