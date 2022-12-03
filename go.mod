@@ -1,4 +1,4 @@
-module ServerProject
+module github.com/russbus11/Pivot
 
 go 1.18
 
